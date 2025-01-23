@@ -1,0 +1,646 @@
+*{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*------------------Sección de barra de menú------------------*/
+header{
+    background: #a4273d61;
+    block-size: 60px;
+    padding-inline: 10px;
+    position: fixed;
+    inline-size: 100%;
+    z-index: 999;
+    transition: 0.2s linear;
+}
+
+.icon-header{
+    block-size: 100%;
+    display: flex;
+    align-items: center;
+    inline-size: min-content;
+}
+
+.icon-header img{
+    block-size: 45px;
+    transform: translateY(-10%);
+}
+
+/*------------------Sección de barra de portada------------------*/
+.banner-content{
+    inline-size: 100%;
+    block-size: 650px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-title{
+    inline-size: 100%;
+    block-size: 100%;
+    position: absolute;
+    background: #0000003d;
+    z-index: 1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 145px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.banner-content img{
+    inline-size: 100%;
+    transform: translateY(-10%);
+}
+
+/*------------------Sección de titulo de portada------------------*/
+.title-description{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+}
+.title-description h1{
+    color: #A4273D;
+    font-size: 50px;
+    font-weight: bold;
+}
+.title-description p{
+    color: #707070;
+    font-size: 24px;
+    text-align: center;
+    margin-block-start: 30px;
+    inline-size: 90%;
+}
+
+.slide-down{
+    background: url(https://www.progreso.tecnm.mx/aspirantes/img/slide_down.png);
+    background-size: contain;
+    inline-size: 40px;
+    block-size: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-style: none;
+    transform: translateY(0px);
+    animation: slideDown 1s infinite alternate;
+    cursor: pointer;
+    margin-block-start: 25px;
+}
+
+@keyframes slideDown {
+    0%{
+        transform: translateY(0px);
+    }
+
+    100%{
+        transform: translateY(15px);
+    }
+}
+
+/*------------------Sección de carreras------------------*/
+.careers-section{
+    margin-block-start: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.columns{
+    display: flex;
+    inline-size: 70%;
+}
+.rows{
+    margin-inline: 30px;
+    inline-size: 100%;
+}
+.career{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin-block-end: 25px;
+}
+.career div{
+    block-size: 40px;
+    inline-size: 40px;
+    background: #A4273D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline-end: 10px;
+    min-inline-size: 40px;
+    min-block-size: 40px;
+}
+.career img{
+    block-size: 70%;
+    inline-size: 70%;
+}
+
+/*------------------Sección de etapas------------------*/
+.card-component{
+    transform: translate(60%, 0px);
+}
+.card-component-end{
+    transform: translate(-60%, 0px);
+    display: flex;
+    flex-direction: row-reverse;
+}
+.point-card{
+    position: absolute;
+    inline-size: 20px;
+    block-size: 20px;
+    border: #D6B161 8px solid;
+    min-inline-size: 0;
+    border-radius: 50%;
+    transform: translate(-73px, 25px);
+    z-index: 1;
+    transition: 0.2s linear;
+    background: white;
+}
+.point-card-end{
+    transform: translate(73px, 25px);
+}
+.point-card-selected{
+    border: #A4273D 8px solid;
+}
+.line-card{
+    position: absolute;
+    inline-size: 10px;
+    block-size: 100%;
+    background: #D6B161;
+    min-inline-size: 0;
+    transform: translateX(-60px);
+    inset-block-start: 0;
+    overflow: hidden;
+    transition: 0.2s linear;
+}
+.line-card-end{
+    transform: translateX(60px);
+}
+.line-card-bar{
+    inline-size: 100%;
+    block-size: 0%;
+    background: #A4273D;
+    transition: 1s ease-in-out;
+}
+.cards-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-block-end: 25px;
+}
+.timeline{
+    block-size: 100%;
+    background: #D6B161;
+    inline-size: 10px;
+    position: absolute;
+    border-radius: 20px;
+    display: none;
+}
+
+.step-card{
+    margin-block: 20px;
+    max-inline-size: 550px;
+    min-inline-size: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    background: white;
+}
+.step-title{
+    background: #A4273D;
+    color: white;
+    display: flex;
+    align-items: center;
+    block-size: 45px;
+    border-radius: 20px;
+    box-shadow: #00000057 0 0 10px;
+    inline-size: 100%;
+}
+.step-card:hover .number-card{
+    font-size: 44px;
+}
+.end-step {
+    flex-direction: row-reverse;
+    text-align: end;
+}
+.number-card{
+    background: #D6B161;
+    inline-size: 60px;
+    block-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 40px;
+    box-shadow: #00000033 0 0 10px;
+    transform: translateX(-2px);
+    position: relative;
+    min-inline-size: 60px;
+    transition: 0.2s linear;
+}
+.end{
+    transform: translateX(2px);
+}
+.step-title-description{
+    font-weight: bold;
+    margin-inline: 10px;
+    min-inline-size: 290px;
+    display: flex;
+    inline-size: 100%;
+    justify-content: center;
+}
+.step-content{
+    inline-size: 93%;
+    box-shadow: #0000001a 0px 6px 10px 0px;
+    border-radius: 0 0 10px 10px;
+    padding-block-end: 10px;
+    overflow: hidden;
+    transition: 0.3s linear;
+    display: flex;
+    flex-direction: column;
+}
+.step-date{
+    background: #A4273D;
+    color: white;
+    inline-size: fit-content;
+    padding-inline: 10px;
+    block-size: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-block-start: 10px;
+    margin-inline: 10px;
+}
+
+.important-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-inline: 20px;
+}
+.payment-cont{
+    inline-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.payment-types{
+    background: #A4273D;
+    padding-inline: 10px;
+    inline-size: 90%;
+    border-radius: 10px;
+}
+.btn-payment-types{
+    border-style: none;
+    color: white;
+    font-weight: bold;
+    background: #A4273D;
+    cursor: pointer;
+    font-size: 15px;
+    block-size: 40px;
+    transition: 0.3s linear;
+    border-radius: 20px 20px 0 0;
+    padding-inline: 5;
+}
+.payment-types-active{
+    background: white;
+    color: #A4273D;
+}
+.btn-payment-types:hover{
+    background: white;
+    color: #A4273D;
+}
+.payment-info-cont{
+    block-size: 140px;
+    inline-size: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.payment-info{
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    inline-size: 100%;
+}
+.payments{
+    inline-size: 90%;
+    border-block-end: #A4273D 1px solid;
+    overflow: hidden;
+    position: relative;
+}
+
+/*------------------Sección de pie de página------------------*/
+footer {
+    background: #A4273D;
+    padding: 20px 10px 20px 10px;
+}
+.text-bold{
+    font-weight: bold;
+}
+.footer-title{
+    inline-size: 100%;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+.footer-title a{
+    color: white;
+    text-decoration: none;
+    margin-inline-start: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Redes sociales */
+
+.social-media{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline-start: 0;
+    margin-block-start: 35px;
+}
+.social-media li{
+    margin-inline: 4%;
+    margin-block-start: 10px;
+}
+.social-media a{
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+.social-media img{
+    inline-size: 38px;
+    block-size: 38px;
+}
+
+/*Apartado de dirección*/
+
+.address{
+    display: flex;
+    inline-size: 100%;
+    margin-block-start: 35px;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.address div{
+    margin-block-start: 20px;
+}
+.address a{
+    color: white;
+    text-decoration: none;
+    margin-inline: 5px;
+}
+.copyright{
+    display: flex;
+    inline-size: 100%;
+    margin-block-start: 30px;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-block-start: #D6B161 solid 1px;
+    padding-block-start: 20px;
+    block-size: 40px;
+    justify-content: center;
+}
+.icons-cop{
+    position: absolute;
+    inset-inline-start: 0;
+    margin-inline-start: 10px;
+}
+
+/*------------------ Diseños generales ------------------*/
+.step-card ul{
+    list-style: none;
+    padding-inline: 20px;
+    padding-block-start: 10px;
+    text-align: justify;
+}
+.step-card li{
+    position: relative;
+    padding-inline-start: 20px;
+    padding-block-end: 10px;
+}
+.quit-padding{
+    padding-block-start: 5px;
+}
+.quit-padding li{
+    padding-block-end: 0;
+}
+.step-card a{
+    color: #A4273D;
+    font-weight: bold;
+    transition: 0.2s;
+
+}
+.step-card a:hover{
+    color: #c54159;
+}
+.step-card li::before{
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inline-size: 15px;
+    block-size: 15px;
+    background-image: url(https://www.progreso.tecnm.mx/aspirantes/img/marker-icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(4px);
+}
+.slide-line-h div{
+    border-block-end: solid 2px;
+    transition: all 0.2s linear;
+    inline-size: 0%;
+}
+.slide-line-h a:hover div{
+    inline-size: 100%;
+}
+
+.hidden-bar {
+    transform: translateY(-100%); /* Oculta el header */
+}
+/*------------------ Vista para hacer slideup ------------------*/
+.slide-up{
+    background: url(https://www.progreso.tecnm.mx/aspirantes/img/slide_up.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    inline-size: 40px;
+    block-size: 50px;
+    position: fixed;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    margin: 30px;
+    border-style: none;
+    transform: translateY(0px);
+    animation: slideDown 1s infinite alternate;
+    cursor: auto;
+    transition: 0.5s linear;
+    opacity: 0;
+}
+.slide-up-on{
+    opacity: 1;
+    cursor: pointer;
+}
+/*------------------ Vista para teléfonos ------------------*/
+@media (max-width: 1220px) {
+
+    /*------------------Sección de etapas------------------*/
+    .card-component{
+        inline-size: 90%;
+    }
+    .card-component-end{
+        display: flex;
+        flex-direction: row;
+    }
+    .line-card-end{
+        transform: translateX(-60px);
+    }
+    .step-card{
+        position: initial;
+    }
+    .end-step{
+        flex-direction: row;
+    }
+    .end{
+        transform: translateX(-2px);
+    }
+    .point-card-end {
+        transform: translateX(-73px);
+    }
+    .card-component{
+        transform: translate(0%, 0px);
+    }
+    .card-component.end{
+        transform: translate(0%, 0px);
+    }
+    .cards-cont{
+        block-size: auto;
+    }
+    .timeline{
+        transform: translateX(-330px);
+    }
+}
+@media (max-width: 1120px)  {
+
+    /*------------------Sección de carreras------------------*/
+    .columns{
+        display: block;
+        inline-size: 70%;
+    }
+    .rows{
+        margin-inline: 0;
+    }
+
+    /*------------------Sección de barra de portada------------------*/
+    .banner-content{
+        inline-size: 100%;
+        block-size: 450px;
+    }
+    .banner-content img{
+        transform: translateY(0px);
+    }
+    .banner-title{
+        font-size: 400%;
+    }
+
+    /*------------------Sección de titulo de portada------------------*/
+    .title-description h1{
+        font-size: 26px;
+    }
+    .title-description p{
+        font-size: 22px;
+    }
+
+    /*------------------Sección de pie de página------------------*/
+    /* Redes sociales */
+    .social-media{
+        flex-direction: column;
+    }
+    .social-media a{
+        font-size: 16px;
+    }
+    .address{
+        font-size: 13px;
+    }
+
+    /*Apartado de dirección*/
+    .copyright{
+        font-size: 10px;
+        block-size: 60px;
+    }
+    .icons-cop{
+        position: relative;
+        margin-block-start: 10px;
+    }
+}
+
+@media (max-width: 700px) {
+    /*------------------Sección de barra de portada------------------*/
+    .banner-content img{
+        block-size: 100%;
+        inline-size: auto;
+    }
+
+    /*------------------Sección de etapas------------------*/
+    .point-card {
+        transform: translateX(-28px);
+        display: none;
+    }
+    .point-card-end {
+        transform: translateX(-28px);
+        display: none;
+    }
+    .timeline{
+        transform: translateX(-285px);
+    }
+}
+
+@media (max-width: 620px) {
+    .timeline{
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 550px) {
+    .payment-info-cont{
+        block-size: 135px;
+    }
+    .btn-payment-types{
+        font-size: 11px;
+    }
+    .step-content{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px){
+    .title-description p {
+        font-size: 16px;
+    }
+    /*------------------Sección de etapas------------------*/
+    .step-title p {
+        inline-size: 70%;
+    }
+    .step-date{
+        font-size: 13px;
+    }
+}
