@@ -2,6 +2,10 @@
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+:root{
+    --primary-color: #A4273D;
+    --second-color: #D6B161;
+}
 /*------------------Sección de barra de menú------------------*/
 header{
     background: #a4273d61;
@@ -11,6 +15,7 @@ header{
     inline-size: 100%;
     z-index: 999;
     transition: 0.2s linear;
+    backdrop-filter: blur(10px);
 }
 
 .icon-header{
@@ -48,6 +53,15 @@ header{
     text-align: center;
 }
 
+.title-let{
+    background: url(../img/titulo_portada.webp);
+    inline-size: 80%;
+    block-size: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .banner-content img{
     inline-size: 100%;
     transform: translateY(-10%);
@@ -62,7 +76,7 @@ header{
     justify-content: center;
 }
 .title-description h1{
-    color: #A4273D;
+    color: var(--primary-color);
     font-size: 50px;
     font-weight: bold;
 }
@@ -122,7 +136,7 @@ header{
 .career div{
     block-size: 40px;
     inline-size: 40px;
-    background: #A4273D;
+    background: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -149,7 +163,7 @@ header{
     position: absolute;
     inline-size: 20px;
     block-size: 20px;
-    border: #D6B161 8px solid;
+    border: var(--second-color) 8px solid;
     min-inline-size: 0;
     border-radius: 50%;
     transform: translate(-73px, 25px);
@@ -161,13 +175,13 @@ header{
     transform: translate(73px, 25px);
 }
 .point-card-selected{
-    border: #A4273D 8px solid;
+    border: var(--primary-color) 8px solid;
 }
 .line-card{
     position: absolute;
     inline-size: 10px;
     block-size: 100%;
-    background: #D6B161;
+    background: var(--second-color);
     min-inline-size: 0;
     transform: translateX(-60px);
     inset-block-start: 0;
@@ -180,7 +194,7 @@ header{
 .line-card-bar{
     inline-size: 100%;
     block-size: 0%;
-    background: #A4273D;
+    background: var(--primary-color);
     transition: 1s ease-in-out;
 }
 .cards-cont{
@@ -192,7 +206,7 @@ header{
 }
 .timeline{
     block-size: 100%;
-    background: #D6B161;
+    background: var(--second-color);
     inline-size: 10px;
     position: absolute;
     border-radius: 20px;
@@ -210,7 +224,7 @@ header{
     background: white;
 }
 .step-title{
-    background: #A4273D;
+    background: var(--primary-color);
     color: white;
     display: flex;
     align-items: center;
@@ -227,7 +241,7 @@ header{
     text-align: end;
 }
 .number-card{
-    background: #D6B161;
+    background: var(--second-color);
     inline-size: 60px;
     block-size: 60px;
     display: flex;
@@ -263,7 +277,7 @@ header{
     flex-direction: column;
 }
 .step-date{
-    background: #A4273D;
+    background: var(--primary-color);
     color: white;
     inline-size: fit-content;
     padding-inline: 10px;
@@ -290,7 +304,7 @@ header{
     flex-direction: column;
 }
 .payment-types{
-    background: #A4273D;
+    background: var(--primary-color);
     padding-inline: 10px;
     inline-size: 90%;
     border-radius: 10px;
@@ -299,7 +313,7 @@ header{
     border-style: none;
     color: white;
     font-weight: bold;
-    background: #A4273D;
+    background: var(--primary-color);
     cursor: pointer;
     font-size: 15px;
     block-size: 40px;
@@ -309,11 +323,11 @@ header{
 }
 .payment-types-active{
     background: white;
-    color: #A4273D;
+    color: var(--primary-color);
 }
 .btn-payment-types:hover{
     background: white;
-    color: #A4273D;
+    color: var(--primary-color);
 }
 .payment-info-cont{
     block-size: 140px;
@@ -329,14 +343,74 @@ header{
 }
 .payments{
     inline-size: 90%;
-    border-block-end: #A4273D 1px solid;
+    border-block-end: var(--primary-color) 1px solid;
     overflow: hidden;
     position: relative;
 }
 
+/*------------------ Explicación etapa 1------------------*/
+.information-list-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 100%;
+
+}
+.information-list{
+    inline-size: 70%;
+}
+
+.information-list ul{
+    list-style: none;
+    padding-inline: 20px;
+    padding-block-start: 10px;
+    text-align: justify;
+}
+.information-list li{
+    position: relative;
+    padding-inline-start: 40px;
+    padding-block-end: 30px;
+    font-size: 22px;
+}
+.quit-padding{
+    padding-block-start: 5px;
+}
+.information-list a{
+    color: white;
+    font-weight: bold;
+    transition: 0.2s;
+    background: var(--primary-color);
+    padding-inline: 10px;
+    border-radius: 10px;
+    
+}
+.information-list a:hover{
+
+}
+.information-list li::before{
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inline-size: 30px;
+    block-size: 30px;
+    background-image: url(https://www.progreso.tecnm.mx/aspirantes/img/marker-icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(4px);
+}
+.list-steps{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.list-steps p{
+    margin-block-end: 15px;
+}
+
 /*------------------Sección de pie de página------------------*/
 footer {
-    background: #A4273D;
+    background: var(--primary-color);
     padding: 20px 10px 20px 10px;
 }
 .text-bold{
@@ -416,7 +490,7 @@ footer {
     color: white;
     font-size: 14px;
     font-weight: bold;
-    border-block-start: #D6B161 solid 1px;
+    border-block-start: var(--second-color) solid 1px;
     padding-block-start: 20px;
     block-size: 40px;
     justify-content: center;
@@ -446,7 +520,7 @@ footer {
     padding-block-end: 0;
 }
 .step-card a{
-    color: #A4273D;
+    color: var(--primary-color);
     font-weight: bold;
     transition: 0.2s;
 
@@ -477,6 +551,44 @@ footer {
 .hidden-bar {
     transform: translateY(-100%); /* Oculta el header */
 }
+
+/*Titulo de pasos*/
+.tarjet-title{
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-block-start: 40px;
+}
+.tarjet-number{
+    font-size: 50px;
+    margin-inline-end: 10px;
+}
+.tarjet-description{
+    display: flex;
+    align-items: center;
+    border: #D6D6D6 solid 1px;
+    block-size: 60px;
+    inline-size: 55%;
+    border-radius: 20px;
+    overflow: hidden;
+    font-size: 25px;
+}
+.tarjet-image{
+    block-size: 100%;
+    inline-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+}
+.tarjet-image img{
+    block-size: 80%;
+}
+.tarjet-description p{
+    margin-inline-start: 20px;
+}
 /*------------------ Vista para hacer slideup ------------------*/
 .slide-up{
     background: url(https://www.progreso.tecnm.mx/aspirantes/img/slide_up.png);
@@ -500,6 +612,7 @@ footer {
     opacity: 1;
     cursor: pointer;
 }
+
 /*------------------ Vista para teléfonos ------------------*/
 @media (max-width: 1220px) {
 

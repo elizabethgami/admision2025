@@ -23,19 +23,6 @@ for (let i = 0; i < buttons.length; i++) {
     });
 }
 
-function slidePaymentInfo(i){
-    
-    buttons[i].classList.add('payment-types-active');
-    const mov = (i + 1);
-
-    for (let j = 0; j < paymentInfo.length; j++){
-        const pos = (j + 1);
-        const translateX = (pos - mov) * 100;         
-        paymentInfo[j].style.transform = `translateX(${translateX}%)`
-    }
-}
-slidePaymentInfo(0);
-
 let lastScroll = 0;
 let stepHover = -1;
 const header = document.getElementById("header");
