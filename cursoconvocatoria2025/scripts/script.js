@@ -47,18 +47,16 @@ window.addEventListener("scroll", () => {
     
     lastScroll = currentScroll;
 
-    if(lastScroll < 800){
+    if(lastScroll < 0){
         stepHover = -1;
-    }else if(lastScroll < 1100){
+    }else if(lastScroll < 1650){
         stepHover = 0;
-    }else if(lastScroll < 1600){
+    }else if(lastScroll < 1840){
         stepHover = 1;
-    }else if(lastScroll < 1900){
+    }else if(lastScroll < 2030){
         stepHover = 2;
-    }else if(lastScroll < 2300){
+    }else {
         stepHover = 3;
-    }else{
-        stepHover = 4;
     }
 
     timeLapse = 0;
