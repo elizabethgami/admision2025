@@ -8,7 +8,7 @@
 }
 /*------------------Sección de barra de menú------------------*/
 header{
-    background: #a4273d61;
+    background: color-mix(in srgb, var(--primary-color) 40%, transparent);
     block-size: 60px;
     padding-inline: 10px;
     position: fixed;

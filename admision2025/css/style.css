@@ -2,15 +2,31 @@
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+:root{
+    --primary-color: #A4273D;
+    --second-color: #D6B161;
+}
 /*------------------Sección de barra de menú------------------*/
 header{
-    background: #a4273d61;
+    background: color-mix(in srgb, var(--primary-color) 40%, transparent);
     block-size: 60px;
     padding-inline: 10px;
     position: fixed;
     inline-size: 100%;
     z-index: 999;
     transition: 0.2s linear;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+}
+nav{
+    margin-inline-end: 20px;
+    font-weight: bold;
+}
+nav a{
+    text-decoration: none;
+    color: white;
 }
 
 .icon-header{
@@ -23,6 +39,15 @@ header{
 .icon-header img{
     block-size: 45px;
     transform: translateY(-10%);
+}
+.btn-main{
+    background: url(../img/menu_icon.png);
+    background-size: cover;
+    background-position: center;
+    inline-size: 40px;
+    block-size: 40px;
+    border-style: none;
+    display: none;
 }
 
 /*------------------Sección de barra de portada------------------*/
@@ -62,7 +87,7 @@ header{
     justify-content: center;
 }
 .title-description h1{
-    color: #A4273D;
+    color: var(--primary-color);
     font-size: 50px;
     font-weight: bold;
 }
@@ -114,15 +139,20 @@ header{
     inline-size: 100%;
 }
 .career{
-    font-size: 15px;
     display: flex;
-    align-items: center;
     margin-block-end: 25px;
+    position: relative;
+    flex-direction: column;
 }
-.career div{
+.career:hover .tarjet-career{
+    opacity: 1;
+    display: flex;
+    pointer-events: auto;
+}
+.career-img{
     block-size: 40px;
     inline-size: 40px;
-    background: #A4273D;
+    background: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -134,6 +164,63 @@ header{
 .career img{
     block-size: 70%;
     inline-size: 70%;
+}
+.career-name{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+/*Tarjeta de carreras */
+.tarjet-career{
+    position: absolute;
+    inline-size: 350px;
+    background: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+    z-index: 1;
+    inset-block-start: 0;
+    transform: translateX(50px);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    pointer-events: none;
+    font-size: 16px;
+}
+.tarjet-career-image{
+    block-size: 200px;
+    inline-size: 100%;
+    background-size: cover;
+}
+.tarjet-career h1{
+    color: white;
+    padding: 0 15px;
+    margin-block-start: 15px;
+    margin-block-end: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.tarjet-career p{
+    text-align: center;
+    font-weight: normal;
+    margin-block-end: 10px;
+}
+.show-more{
+    inline-size: 100%;
+    display: flex;
+    justify-content: center;
+}
+.show-more a{
+    border-block-start: #E8E8E8 solid 1px;
+    inline-size: 90%;
+    color: var(--primary-color);
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /*------------------Sección de etapas------------------*/
@@ -149,7 +236,7 @@ header{
     position: absolute;
     inline-size: 20px;
     block-size: 20px;
-    border: #D6B161 8px solid;
+    border: var(--second-color) 8px solid;
     min-inline-size: 0;
     border-radius: 50%;
     transform: translate(-73px, 25px);
@@ -161,13 +248,13 @@ header{
     transform: translate(73px, 25px);
 }
 .point-card-selected{
-    border: #A4273D 8px solid;
+    border: var(--primary-color) 8px solid;
 }
 .line-card{
     position: absolute;
     inline-size: 10px;
     block-size: 100%;
-    background: #D6B161;
+    background: var(--second-color);
     min-inline-size: 0;
     transform: translateX(-60px);
     inset-block-start: 0;
@@ -180,7 +267,7 @@ header{
 .line-card-bar{
     inline-size: 100%;
     block-size: 0%;
-    background: #A4273D;
+    background: var(--primary-color);
     transition: 1s ease-in-out;
 }
 .cards-cont{
@@ -192,7 +279,7 @@ header{
 }
 .timeline{
     block-size: 100%;
-    background: #D6B161;
+    background: var(--second-color);
     inline-size: 10px;
     position: absolute;
     border-radius: 20px;
@@ -210,7 +297,7 @@ header{
     background: white;
 }
 .step-title{
-    background: #A4273D;
+    background: var(--primary-color);
     color: white;
     display: flex;
     align-items: center;
@@ -227,7 +314,7 @@ header{
     text-align: end;
 }
 .number-card{
-    background: #D6B161;
+    background: var(--second-color);
     inline-size: 60px;
     block-size: 60px;
     display: flex;
@@ -263,7 +350,7 @@ header{
     flex-direction: column;
 }
 .step-date{
-    background: #A4273D;
+    background: var(--primary-color);
     color: white;
     inline-size: fit-content;
     padding-inline: 10px;
@@ -290,7 +377,7 @@ header{
     flex-direction: column;
 }
 .payment-types{
-    background: #A4273D;
+    background: var(--primary-color);
     padding-inline: 10px;
     inline-size: 90%;
     border-radius: 10px;
@@ -299,7 +386,7 @@ header{
     border-style: none;
     color: white;
     font-weight: bold;
-    background: #A4273D;
+    background: var(--primary-color);
     cursor: pointer;
     font-size: 15px;
     block-size: 40px;
@@ -309,11 +396,11 @@ header{
 }
 .payment-types-active{
     background: white;
-    color: #A4273D;
+    color: var(--primary-color);
 }
 .btn-payment-types:hover{
     background: white;
-    color: #A4273D;
+    color: var(--primary-color);
 }
 .payment-info-cont{
     block-size: 140px;
@@ -329,14 +416,14 @@ header{
 }
 .payments{
     inline-size: 90%;
-    border-block-end: #A4273D 1px solid;
+    border-block-end: var(--primary-color) 1px solid;
     overflow: hidden;
     position: relative;
 }
 
 /*------------------Sección de pie de página------------------*/
 footer {
-    background: #A4273D;
+    background: var(--primary-color);
     padding: 20px 10px 20px 10px;
 }
 .text-bold{
@@ -416,7 +503,7 @@ footer {
     color: white;
     font-size: 14px;
     font-weight: bold;
-    border-block-start: #D6B161 solid 1px;
+    border-block-start: var(--second-color) solid 1px;
     padding-block-start: 20px;
     block-size: 40px;
     justify-content: center;
@@ -446,7 +533,7 @@ footer {
     padding-block-end: 0;
 }
 .step-card a{
-    color: #A4273D;
+    color: var(--primary-color);
     font-weight: bold;
     transition: 0.2s;
 
@@ -549,6 +636,24 @@ footer {
     .rows{
         margin-inline: 0;
     }
+    .career{
+        align-items: center;
+    }
+    .career-name{
+        display: none;
+    }
+    .tarjet-career{
+        position: relative;
+        transform: translateX(0);
+        opacity: 1;
+        inline-size: 320px;
+    }
+
+    .careers-section {
+        margin-block-start: 40px;
+        display: flex;
+        justify-content: center;
+    }
 
     /*------------------Sección de barra de portada------------------*/
     .banner-content{
@@ -621,6 +726,16 @@ footer {
 }
 
 @media (max-width: 550px) {
+    /*------------------Sección de barra de menú------------------*/
+    nav{
+    }
+    nav a{
+    }
+
+    .btn-main{
+        display: flex;
+    }
+
     .payment-info-cont{
         block-size: 135px;
     }
